@@ -1,0 +1,12 @@
+#endpoint: ""
+endpoint: https://eu1.prisma.sh/peter-eck-e9e66a/hackernews-node/dev
+
+datamodel: datamodel.prisma
+
+generate:
+  - generator: javascript-client
+    output: ../src/generated/prisma-client
+
+hooks:
+  post-deploy:
+    - prisma generate
