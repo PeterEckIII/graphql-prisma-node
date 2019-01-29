@@ -1,13 +1,13 @@
 scalar DateTime
 
 enum LinkOrderByInput {
-  description_ASC,
-  description_DSC,
-  url_ASC.
-  url_DSC.
-  createdAt_ASC.
+  description_ASC
+  description_DSC
+  url_ASC
+  url_DSC
+  createdAt_ASC
   createdAt_DSC
-};
+}
 
 type Query {
   info: String!
@@ -24,11 +24,6 @@ type Mutation {
 type Subscription {
   newLink: Link
   newVote: Vote
-}
-
-type Feed {
-  links: {Link!}!
-  count: Int!
 }
 
 type Link {
@@ -56,4 +51,9 @@ type Vote {
   id: ID!
   link: Link!
   user: User!
+}
+
+type Feed {
+  links: [Link!]!
+  count: Int!
 }
